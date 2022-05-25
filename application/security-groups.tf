@@ -3,7 +3,9 @@ resource "aws_security_group" "bastion-sg" {
   name        = "allow_rdp"
   description = "Allow rdp inbound traffic"
   vpc_id      = module.vpc.vpc_id
-
+// In the real world, this would be locked down to a company VPN
+// And would NOT be open to the world
+// 0.0.0.0/0 was just for convenience for the purposes of a demo
   ingress {
     description = "RDP from Internet"
     from_port   = 3389

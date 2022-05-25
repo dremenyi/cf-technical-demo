@@ -1,3 +1,4 @@
+# Code assumes that you have your enviornment variables set for authentication
 terraform {
   required_version = ">= 0.13.1"
   required_providers {
