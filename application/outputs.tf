@@ -36,7 +36,7 @@ output "azs" {
 
 output "db_subnet_group" {
   description = "The database subnet group"
-  value = module.vpc.database_subnet_group
+  value       = module.vpc.database_subnet_group
 }
 
 
@@ -57,7 +57,7 @@ output "security_group_name" {
 
 output "zone_id" {
   description = "route 53 hosted zone id"
-  value = data.aws_route53_zone.myzone.zone_id
+  value       = data.aws_route53_zone.myzone.zone_id
 }
 
 output "ec2-wpserver1_private_instance_id" {
@@ -72,7 +72,7 @@ output "ec2-wpserver2_private_instance_id" {
 ## ec2_bastion_public_ip
 output "ec2_bastion_public_ip" {
   description = "List of public IP addresses assigned to the instances"
-  value       = module.ec2-bastion.public_ip 
+  value       = module.ec2-bastion.public_ip
 }
 output "ec2-wpserver1_private_ip" {
   description = "List of public IP addresses assigned to the instances"
@@ -80,12 +80,12 @@ output "ec2-wpserver1_private_ip" {
 }
 output "ec2-wpserver2_private_ip" {
   description = "List of public IP addresses assigned to the instances"
-  value       = module.ec2-wpserver2.private_ip 
+  value       = module.ec2-wpserver2.private_ip
 }
 
 output "ec2-wpserver2_information" {
   description = "List of public IP addresses assigned to the instances"
-  value       = [module.ec2-wpserver2.private_ip, module.ec2-wpserver2.id] 
+  value       = [module.ec2-wpserver2.private_ip, module.ec2-wpserver2.id]
 }
 
 output "acm_certificate_arn" {

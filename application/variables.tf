@@ -95,51 +95,51 @@ variable "instance_keypair" {
 }
 
 variable "db_class" {
-  type = string
+  type    = string
   default = "db.t3.micro"
 }
 
 variable "db_engine_version" {
-  type = string
+  type    = string
   default = "11.15"
 }
 variable "db_engine" {
-  type = string
+  type    = string
   default = "postgres"
-  
+
 }
 
 variable "db_name" {
-  type = string
+  type    = string
   default = "RDS1"
 }
 
 
 
 variable "db_family" {
-  type = string
+  type    = string
   default = "postgres11"
 }
 
 variable "db_major_engine_version" {
-  type = string
+  type    = string
   default = "11"
 }
 
 variable "db_username" {
-  type = string
+  type      = string
   sensitive = true
-  default = "PostgreSql_User"
+  default   = "PostgreSql_User"
 }
 
 variable "db_password" {
-  type = string
+  type      = string
   sensitive = true
-  default = "PostgreSql_Password" # Would never fly in a production environment
+  default   = "PostgreSql_Password" # Would never fly in a production environment
 }
 
 variable "dns_name" {
-  default = "*.cftechnicaldemo.com"
+  default = "apps.cftechnicaldemo.com"
 }
 
 

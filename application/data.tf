@@ -33,5 +33,5 @@ data "aws_ami" "latest_winserv_ami" {
 }
 
 data "aws_route53_zone" "myzone" {
-  name         = "cftechnicaldemo.com"
+  name = "cftechnicaldemo.com"
 }
