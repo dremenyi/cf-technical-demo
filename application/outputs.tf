@@ -55,4 +55,40 @@ output "security_group_name" {
   value       = aws_security_group.bastion-sg.name
 }
 
+output "zone_id" {
+  description = "route 53 hosted zone id"
+  value = data.aws_route53_zone.myzone.zone_id
+}
 
+output "ec2-wpserver1_private_instance_id" {
+  description = "List of IDs of instances"
+  value       = module.ec2-wpserver1.id
+}
+output "ec2-wpserver2_private_instance_id" {
+  description = "List of IDs of instances"
+  value       = module.ec2-wpserver2.id
+}
+
+## ec2_bastion_public_ip
+output "ec2_bastion_public_ip" {
+  description = "List of public IP addresses assigned to the instances"
+  value       = module.ec2-bastion.public_ip 
+}
+output "ec2-wpserver1_private_ip" {
+  description = "List of public IP addresses assigned to the instances"
+  value       = module.ec2-wpserver1.private_ip
+}
+output "ec2-wpserver2_private_ip" {
+  description = "List of public IP addresses assigned to the instances"
+  value       = module.ec2-wpserver2.private_ip 
+}
+
+output "ec2-wpserver2_information" {
+  description = "List of public IP addresses assigned to the instances"
+  value       = [module.ec2-wpserver2.private_ip, module.ec2-wpserver2.id] 
+}
+
+output "acm_certificate_arn" {
+  description = "The ARN of the certificate"
+  value       = module.acm.acm_certificate_arn
+}

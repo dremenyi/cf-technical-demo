@@ -129,12 +129,17 @@ variable "db_major_engine_version" {
 variable "db_username" {
   type = string
   sensitive = true
-  
+  default = "PostgreSql_User"
 }
 
 variable "db_password" {
   type = string
   sensitive = true
+  default = "PostgreSql_Password" # Would never fly in a production environment
+}
+
+variable "dns_name" {
+  default = "*.cftechnicaldemo.com"
 }
 
 

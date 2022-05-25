@@ -1,6 +1,9 @@
+###############################
+# Data Sources for EC2 Module #
+###############################
 data "aws_ami" "latest_redhat_ami" {
   most_recent = true
-  owners      = ["309956199498"]
+  owners      = ["309956199498"] #Needs changed for GovCloud
   filter {
     name   = "name"
     values = ["RHEL-8*"]
@@ -13,7 +16,7 @@ data "aws_ami" "latest_redhat_ami" {
 
 data "aws_ami" "latest_winserv_ami" {
   most_recent = true
-  owners      = ["801119661308"]
+  owners      = ["801119661308"] #Needs changed for GovCloud
   filter {
     name   = "name"
     values = ["Windows_Server-2019-English-Full-Base-*"]
@@ -27,4 +30,8 @@ data "aws_ami" "latest_winserv_ami" {
     values = ["hvm"]
   }
 
+}
+
+data "aws_route53_zone" "myzone" {
+  name         = "cftechnicaldemo.com"
 }
